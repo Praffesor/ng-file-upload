@@ -2130,7 +2130,7 @@ ngFileUpload.service('UploadResize', ['UploadValidate', '$q', function (UploadVa
 
       if (items && items.length > 0 && $window.location.protocol !== 'file:') {
         for (var i = 0; i < items.length; i++) {
-          if (items[i].webkitGetAsEntry && items[i].webkitGetAsEntry() && items[i].webkitGetAsEntry().isDirectory) {
+          if (allowDir && items[i].webkitGetAsEntry && items[i].webkitGetAsEntry() && items[i].webkitGetAsEntry().isDirectory) {
             var entry = items[i].webkitGetAsEntry();
             if (entry.isDirectory && !allowDir) {
               continue;
